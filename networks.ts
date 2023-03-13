@@ -1,5 +1,5 @@
-import { NetworksUserConfig } from "hardhat/types";
-import dotenv from "dotenv";
+import { NetworksUserConfig } from 'hardhat/types';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -10,10 +10,22 @@ const networks: NetworksUserConfig = {};
 //   url: process.env.ALCHEMY_RINKEBY_RPC_URL,
 //   accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
 // };
-networks.goerli = {
-  chainId: 5,
-  url: process.env.ALCHEMY_GOERLI_RPC_URL,
+// networks.goerli = {
+//   chainId: 5,
+//   url: process.env.ALCHEMY_GOERLI_RPC_URL,
+//   accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+// };
+networks.shibuya = {
+  chainId: 81,
+  url: 'https://shibuya.public.blastapi.io',
   accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+  timeout: 60 * 1000,
+};
+networks.astar = {
+  chainId: 592,
+  url: 'https://astar.public.blastapi.io',
+  accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+  timeout: 60 * 1000,
 };
 networks.hardhat = {
   chainId: 31337,

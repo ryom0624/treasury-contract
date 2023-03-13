@@ -1,0 +1,85 @@
+{
+  "address": "0x4B5B687f4A41e846e97Fd8142311340e36a33b38",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "balance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0xbaea056fe3c7fdf0c0436adc7b199b0249d64a4fba3acab85b82b5ddad5fd8a6",
+  "receipt": {
+    "to": null,
+    "from": "0x822E38d8cc0B128711fB92231b3330b18bBb5e34",
+    "contractAddress": "0x4B5B687f4A41e846e97Fd8142311340e36a33b38",
+    "transactionIndex": 6,
+    "gasUsed": "138674",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x476b76ba8d022f3b53e8f71a926da8863eeec0b6967525f84fcfda4237714b23",
+    "transactionHash": "0xbaea056fe3c7fdf0c0436adc7b199b0249d64a4fba3acab85b82b5ddad5fd8a6",
+    "logs": [],
+    "blockNumber": 3125924,
+    "cumulativeGasUsed": "2278675",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "2499562fb6cf06b46afab60bb7450d5e",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"balance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Treasury.sol\":\"Treasury\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":100},\"remappings\":[]},\"sources\":{\"contracts/Treasury.sol\":{\"content\":\"//SPDX-License-Identifier: Unlicense\\npragma solidity ^0.8.6;\\n\\ncontract Treasury {\\n    address private owner;\\n\\n    constructor() {\\n        owner = msg.sender;\\n    }\\n\\n    receive() external payable {}\\n\\n    function balance() external view returns (uint256) {\\n        return address(this).balance;\\n    }\\n\\n    function withdraw() external {\\n        require(msg.sender == owner, \\\"Only owner can withdraw\\\");\\n        payable(msg.sender).transfer(address(this).balance);\\n    }\\n}\\n\",\"keccak256\":\"0x776aa2b163ccfba6071dd0f5d55ea117522ea80654bea1c02daec81f7fafb5a0\",\"license\":\"Unlicense\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50600080546001600160a01b03191633179055610123806100326000396000f3fe608060405260043610602a5760003560e01c80633ccfd60b146035578063b69ef8a814604957600080fd5b36603057005b600080fd5b348015604057600080fd5b5060476068565b005b348015605457600080fd5b504760405190815260200160405180910390f35b6000546001600160a01b0316331460bf5760405162461bcd60e51b81526020600482015260176024820152764f6e6c79206f776e65722063616e20776974686472617760481b604482015260640160405180910390fd5b60405133904780156108fc02916000818181858888f1935050505015801560ea573d6000803e3d6000fd5b5056fea26469706673582212203efc49cd99dbe1fd9c741da9a3a35bb623ad83e2392ce9ceb03ec76a0a6f965a64736f6c63430008090033",
+  "deployedBytecode": "0x608060405260043610602a5760003560e01c80633ccfd60b146035578063b69ef8a814604957600080fd5b36603057005b600080fd5b348015604057600080fd5b5060476068565b005b348015605457600080fd5b504760405190815260200160405180910390f35b6000546001600160a01b0316331460bf5760405162461bcd60e51b81526020600482015260176024820152764f6e6c79206f776e65722063616e20776974686472617760481b604482015260640160405180910390fd5b60405133904780156108fc02916000818181858888f1935050505015801560ea573d6000803e3d6000fd5b5056fea26469706673582212203efc49cd99dbe1fd9c741da9a3a35bb623ad83e2392ce9ceb03ec76a0a6f965a64736f6c63430008090033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 3,
+        "contract": "contracts/Treasury.sol:Treasury",
+        "label": "owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      }
+    }
+  }
+}
